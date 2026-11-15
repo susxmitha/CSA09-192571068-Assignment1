@@ -1,0 +1,15 @@
+Facility created: 2 floors, 4 slots
+ENTER  Ticket#1001 TwoWheeler[TN10A1001] floor 0 slot 0 in 2026-11-05T09:00
+ENTER  Ticket#1002 Car[TN10B2002] floor 0 slot 1 in 2026-11-05T09:00
+ENTER  Ticket#1003 ElectricCar[TN10C3003] floor 1 slot 0 in 2026-11-05T09:30
+ENTER  Ticket#1004 Car[TN10D4004] floor 1 slot 1 in 2026-11-05T10:00
+REJECTED ENTER,CAR,TN10E5005,2026-11-05T10:05  ->  Facility full - no free slot for TN10E5005
+REJECTED ENTER,TRUCK,TN10F6006,2026-11-05T10:10  ->  Unknown vehicle type: TRUCK
+REJECTED ENTER,CAR,TN10A1001,2026-11-05T10:15  ->  Duplicate registration number: TN10A1001
+EXIT   TN10A1001 fee = Rs 20.0
+EXIT   TN10C3003 fee = Rs 180.0
+EXIT   TN10B2002 fee = Rs 150.0
+ENTER  Ticket#1005 Car[TN10E5005] floor 0 slot 0 in 2026-11-05T13:30
+EXIT   TN10D4004 fee = Rs 0.0
+EXIT   TN10E5005 fee = Rs 240.0
+TOTAL COLLECTION = Rs 590.0

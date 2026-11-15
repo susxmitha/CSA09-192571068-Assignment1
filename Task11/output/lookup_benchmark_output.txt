@@ -1,0 +1,9 @@
+n        Array (ns/find)    ArrayList (ns/find) HashMap (ns/find)
+1000     4758.3             15506.2            77.9
+10000    70149.2            77544.4            93.6
+100000   2414181.3          2006398.7          47.0
+
+Extra memory for the structure itself, n = 100000 (tickets shared, so only the container is counted):
+  array     : 11,475,096 bytes (tickets + vehicles + array)
+  ArrayList : +400,040 bytes
+  HashMap   : +5,297,200 bytes
