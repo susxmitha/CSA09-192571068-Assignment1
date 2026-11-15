@@ -1,0 +1,11 @@
+TN03C3 amount due = Rs 210.0
+10 kWh at Rs 12.0 = Rs 120.0
+Chargeable.validUnits(-3) = false
+Same object seen as Vehicle, Payable and Chargeable: true true true
+
+What cannot be expressed if Vehicle became an interface:
+ - a constructor that validates the registration number
+ - a private final regNo field (interface fields are public static final constants)
+ - protected members
+What cannot be expressed if Chargeable became an abstract class:
+ - ElectricCar already extends Car, and Java allows only one superclass
