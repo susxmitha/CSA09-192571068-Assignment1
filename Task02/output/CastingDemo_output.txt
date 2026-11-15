@@ -1,0 +1,18 @@
+--- Casting risk when converting minutes to hours ---
+minutes / 60 * rate            = 60.0   (WRONG, 2 h)
+(int)(minutes / 60.0) * rate   = 60.0   (WRONG, 2 h)
+Math.round(minutes / 60.0)     = 60.0   (WRONG, 2 h)
+(minutes + 59) / 60 * rate     = 90.0  (CORRECT, 3 h)
+
+--- long to int narrowing ---
+(int) 3000000000L = -1294967296   (silently wrong)
+Math.toIntExact fails loudly: integer overflow
+
+--- Reading input with Scanner ---
+read: TN01AB1111, 130 min, CAR
+
+--- Alternative layouts for floors of different sizes ---
+floor 2, slot 1: naive f*S+s with S=4 -> index 9, offset table -> index 6 (floor 2 starts at 5)
+jagged: jag[2][1] reached in 2 steps, O(1); flat: flat[offset[2]+1], O(1)
+flat array size = 12, jagged total = 12
+ArrayList<String[]> now holds 6 floors (array of arrays is fixed at 5)
