@@ -1,0 +1,20 @@
+1. Compile-time polymorphism (overloading)
+   calculateFee(130) selected by argument type int
+   [executing] Vehicle.calculateFee(int) -> calls ratePerHour() on Car
+   [executing] Car.ratePerHour()
+   fee = 90.0
+   calculateFee(LocalTime, LocalTime) selected by two LocalTime arguments
+   [executing] Vehicle.calculateFee(LocalTime, LocalTime)
+   [executing] Vehicle.calculateFee(int) -> calls ratePerHour() on Car
+   [executing] Car.ratePerHour()
+   fee = 90.0
+
+2. Runtime polymorphism (upcasting + dynamic dispatch)
+   declared type = Vehicle, actual type = TwoWheeler
+   [executing] Vehicle.calculateFee(int) -> calls ratePerHour() on TwoWheeler
+   [executing] TwoWheeler.ratePerHour()
+   fee = 30.0
+   declared type = Vehicle, actual type = Car
+   [executing] Vehicle.calculateFee(int) -> calls ratePerHour() on Car
+   [executing] Car.ratePerHour()
+   fee = 90.0
