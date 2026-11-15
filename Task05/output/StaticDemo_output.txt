@@ -1,0 +1,14 @@
+Case A - instance counter:
+  north issues 1001, south issues 1001  <- same number twice
+Case B - static counter:
+  north issues 1001, south issues 1002  <- unique
+  FacilityB class loaded, counter starts at 1000
+Case C - gate prefix:
+  north issues N-1001, south issues S-1001  <- unique
+
+Object life cycle:
+  ticket reachable, watcher.get() != null : true
+  after t = null and System.gc(), collected : true  (gc() is only a hint)
+
+Passing objects: Java passes the reference by value
+  after reassign(x), x still points to ticket A (caller's reference unchanged)
