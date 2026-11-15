@@ -1,0 +1,14 @@
+new ElectricCar("TN03C3") - constructor trace:
+  1. ElectricCar(String) is called; first statement super(regNo) hands over to Car
+     (Car calls Vehicle, Vehicle calls Object - nothing is printed for Object)
+  2. Vehicle instance initialiser
+  3. Vehicle(String) body: regNo = TN03C3
+  4. Car(String) body
+  5. ElectricCar(String) body
+  6. object ready; getRegNo() -> EV-TN03C3, fee(130) = 90.0
+
+Composition version:
+  CVehicle car fee(130) = 90.0
+  CVehicle van fee(130) = 180.0
+
+  fee time: inheritance 4.36 ns/call, composition 5.57 ns/call (both O(1))
