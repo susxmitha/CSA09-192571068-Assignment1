@@ -1,0 +1,16 @@
+TwoWheeler[TN01A1] fee(130) = 30.0
+Car[TN02B2] fee(130) = 90.0
+ElectricCar[TN03C3] fee(130) = 81.0
+
+equals / hashCode / toString
+a == b          : false
+a.equals(b)     : true
+same hashCode   : true
+HashSet size    : 1  (duplicate plate rejected)
+toString        : Car[TN02B2]
+
+Switch-on-type version: 81.0
+Adding a new type there means editing the switch inside TypedVehicle (an existing class).
+Adding a new type with overriding means writing one new subclass; nothing else is edited.
+
+Time per fee: overriding 4.72 ns, switch on String 4.98 ns
