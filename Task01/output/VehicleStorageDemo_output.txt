@@ -1,0 +1,11 @@
+Adding a new attribute 'slot' in the parallel-array design means: a new array,
+and every method that adds, removes or shifts a vehicle must update it too.
+In the object design it is one new field in one class.
+
+n        Objects (ns/find)    Parallel (ns/find)  
+1000     62003.7              74151.1             
+10000    129137.2             108064.8            
+100000   439990.5             362583.3            
+
+Both searches are O(n). The parallel version touches one contiguous array of
+references (better cache behaviour); the object version has one extra reference hop.
