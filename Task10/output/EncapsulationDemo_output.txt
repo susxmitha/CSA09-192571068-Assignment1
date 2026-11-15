@@ -1,0 +1,13 @@
+SafeSlot rejected: minutes -300
+SafeSlot rejected: slot 250
+OpenSlot accepted minutes=-300, slot=250  <- corrupt state
+fee for -300 min would be -120 (a refund the system never intended)
+
+Wrapper classes and autoboxing
+Integer 127 == 127   : true   (cached object)
+Integer 1000 == 1000 : false  (two different objects)
+Integer 1000 equals  : true
+unboxing null -> NullPointerException
+Integer.parseInt("130") = 130
+
+update with validation 2.64 ns, direct field write 1.75 ns
