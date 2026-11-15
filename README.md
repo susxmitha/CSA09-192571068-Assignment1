@@ -6,6 +6,7 @@
 |---|---|
 | Name | Susmitha |
 | Register number | 192571068 |
+| Java version | OpenJDK 21 (LTS) |
 
 ## How to compile and run
 
