@@ -1,0 +1,43 @@
+ID   | Test                                                     | Expected                   | Actual                     | Result
+----------------------------------------------------------------------------------------------------------------------------------
+E1   | e-bike 30 minutes                                        | 20.0                       | 20.0                       | PASS
+E2   | e-bike 10 hours (still flat)                             | 20.0                       | 20.0                       | PASS
+E3   | e-bike zero minutes                                      | 0.0                        | 0.0                        | PASS
+E4   | e-bike negative duration                                 | IllegalArgumentException   | IllegalArgumentException   | PASS
+V1   | van 08:30-10:00 (1 off-peak h + 1 peak h)                | 90.0                       | 90.0                       | PASS
+V2   | van 16:30-18:00 (peak h then off-peak h)                 | 90.0                       | 90.0                       | PASS
+V3   | van 09:00-17:00 (8 peak hours = 480, = cap)              | 480.0                      | 480.0                      | PASS
+V4   | van 09:00-17:01 (capped at 480)                          | 480.0                      | 480.0                      | PASS
+V5   | van 18:00-19:00 (off-peak, car rate)                     | 30.0                       | 30.0                       | PASS
+V6   | van 08:59-09:01 (one started hour, priced by its start)  | 30.0                       | 30.0                       | PASS
+V6b  | van 08:00-09:01 (off-peak hour, then peak hour)          | 90.0                       | 90.0                       | PASS
+V7   | van zero minutes                                         | 0.0                        | 0.0                        | PASS
+V8   | van exit before entry                                    | IllegalArgumentException   | IllegalArgumentException   | PASS
+V9   | car 09:00-10:30 unchanged by the new rules               | 60.0                       | 60.0                       | PASS
+P1   | one-day pass valid on its own day                        | true                       | true                       | PASS
+P2   | one-day pass invalid next day                            | false                      | false                      | PASS
+F1   | 5 floors with different slot counts: capacity            | 12                         | 12                         | PASS
+F2   | floors                                                   | 5                          | 5                          | PASS
+D1   | visitor with day pass, same-day stay: parking free       | 0.0                        | 0.0                        | PASS
+D2   | day pass price collected at the gate                     | 100.0                      | 100.0                      | PASS
+D3   | day pass, stay crosses midnight: charged 4 h             | 120.0                      | 120.0                      | PASS
+D4   | unknown type still rejected                              | IllegalArgumentException   | IllegalArgumentException   | PASS
+D5   | e-bike through the service                               | 20.0                       | 20.0                       | PASS
+D6   | van through the service (4 peak hours)                   | 240.0                      | 240.0                      | PASS
+Facility created: 5 floors, 12 slots
+ENTER  Ticket#1005 EBike[TN20EB1001] floor 0 slot 0 in 2026-11-05T09:00
+ENTER  Ticket#1006 DeliveryVan[TN20DV2001] floor 0 slot 1 in 2026-11-05T08:30
+ENTER  Ticket#1007 DeliveryVan[TN20DV2002] floor 0 slot 2 in 2026-11-05T16:30
+ENTER  Ticket#1008 Car[TN20CR3001] floor 1 slot 0 in 2026-11-05T09:00
+ENTER  Ticket#1009 Car[TN20CR3002] floor 1 slot 1 in 2026-11-05T09:00
+ENTER  Ticket#1010 Car[TN20CR4001] floor 2 slot 0 in 2026-11-05T22:00
+EXIT   TN20EB1001 fee = Rs 20.0
+EXIT   TN20DV2001 fee = Rs 90.0
+EXIT   TN20DV2002 fee = Rs 90.0
+EXIT   TN20CR3001 fee = Rs 0.0
+EXIT   TN20CR3002 fee = Rs 60.0
+EXIT   TN20CR4001 fee = Rs 120.0
+TOTAL COLLECTION = Rs 580.0
+S1   | scenario total (see hand calculation in report)          | 580.0                      | 580.0                      | PASS
+----------------------------------------------------------------------------------------------------------------------------------
+Passed: 25   Failed: 0

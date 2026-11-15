@@ -1,0 +1,14 @@
+Facility created: 5 floors, 12 slots
+ENTER  Ticket#1001 EBike[TN20EB1001] floor 0 slot 0 in 2026-11-05T09:00
+ENTER  Ticket#1002 DeliveryVan[TN20DV2001] floor 0 slot 1 in 2026-11-05T08:30
+ENTER  Ticket#1003 DeliveryVan[TN20DV2002] floor 0 slot 2 in 2026-11-05T16:30
+ENTER  Ticket#1004 Car[TN20CR3001] floor 1 slot 0 in 2026-11-05T09:00
+ENTER  Ticket#1005 Car[TN20CR3002] floor 1 slot 1 in 2026-11-05T09:00
+ENTER  Ticket#1006 Car[TN20CR4001] floor 2 slot 0 in 2026-11-05T22:00
+EXIT   TN20EB1001 fee = Rs 20.0
+EXIT   TN20DV2001 fee = Rs 90.0
+EXIT   TN20DV2002 fee = Rs 90.0
+EXIT   TN20CR3001 fee = Rs 0.0
+EXIT   TN20CR3002 fee = Rs 60.0
+EXIT   TN20CR4001 fee = Rs 120.0
+TOTAL COLLECTION = Rs 580.0
